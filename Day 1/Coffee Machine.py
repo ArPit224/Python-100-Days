@@ -46,7 +46,15 @@ def resourcesLeft(coffeeSel):
             water = resources["water"] - recipe[coffeeSel]["water"]
             coffee = resources["coffee"] - recipe[coffeeSel]["coffee"]
             milk = resources["milk"] - recipe[coffeeSel]["milk"]
-        
+            
+            depletedResource = []
+            resourcesValues = [water, coffee, milk]
+            resourcesName = ["water", "coffee", "milk"]
+            
+            for i in range(3):
+                if(resourcesValues[i] <= 0):
+                    depletedResource.append(resourcesName[i])
+                    
             if(water >= 0 and coffee >= 0 and milk >= 0):
                 money = resources ["money"] + recipe[coffeeSel]["money"]
                 moneyOut = moneyEntered - recipe[coffeeSel]["money"]
@@ -59,7 +67,11 @@ def resourcesLeft(coffeeSel):
                 return True
             
             else:
-                print("not enough resources")
+                print("Sorry there is not enough:")
+                
+                for i in depletedResource:
+                    print(f"\t{i}")
+                    
         else:
             print(f"Not enough money entered, Here is your refund: {moneyEntered}")
     
