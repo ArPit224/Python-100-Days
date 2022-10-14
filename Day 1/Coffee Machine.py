@@ -1,3 +1,5 @@
+machineStatus = True
+
 def coffeeSelect():
     print(""">>>What would you like?
           \n\tMenu:
@@ -22,36 +24,85 @@ recipe = {
 def report():
     print("xxxxxxxxxxxxxxxx")
     print(f"""Report\n
-          Water left: {resources["water"]}\n
-          Milk left: {resources["milk"]}\n
-          Coffee left: {resources["coffee"]}\n
+          Water left: {resources["water"]}ml\n
+          Milk left: {resources["milk"]}ml\n
+          Coffee left: {resources["coffee"]}mg\n
           Money made: ${resources["money"]}""")
     print("") 
     print("xxxxxxxxxxxxxxxx")
     
-coffeeSel = coffeeSelect()
 
 def resourcesLeft(coffeeSel):
-    water = resources["water"] - recipe[coffeeSel]["water"]
-    coffee = resources["coffee"] - recipe[coffeeSel]["coffee"]
-    milk = resources["milk"] - recipe[coffeeSel]["milk"]
-    
-    
-    if(water >= 0 and coffee >= 0 and milk >= 0):
-        money = resources ["money"] + recipe[coffeeSel]["money"]
 
-        resources["money"] = money
-        resources["water"] = water
-        resources["milk"] = milk
-        resources["coffee"] = coffee
+    if(coffeeSel == "report"):
+        report()
+    
+    elif(coffeeSel in recipe.keys()):
+
+        moneyEntered = moneyManager()
         
-        return True
+        if(recipe[coffeeSel]["money"] <= moneyEntered):
+            
+            water = resources["water"] - recipe[coffeeSel]["water"]
+            coffee = resources["coffee"] - recipe[coffeeSel]["coffee"]
+            milk = resources["milk"] - recipe[coffeeSel]["milk"]
+        
+            if(water >= 0 and coffee >= 0 and milk >= 0):
+                money = resources ["money"] + recipe[coffeeSel]["money"]
+                moneyOut = moneyEntered - recipe[coffeeSel]["money"]
+                print(f"Here is change: ${moneyOut}")
+                resources["money"] = money
+                resources["water"] = water
+                resources["milk"] = milk
+                resources["coffee"] = coffee
+                
+                return True
+            
+            else:
+                print("not enough resources")
+        else:
+            print(f"Not enough money entered, Here is your refund: {moneyEntered}")
     
     else:
-        return False
+        print("Cannot process the input provided!\nPlease try again...")
 
-report
-if(resourcesLeft("latte")):
-    report()
-else:
-    print("insufficient resources")
+def moneyManager():
+    print(">>>Please enter coins\n>>>Enter Pennies\n\t<<<", end = "")
+    pennies = int(input())
+    print(">>>Enter Nickels\n\t<<<", end = "")
+    nickels = int(input())
+    print(">>>Enter Dimes\n\t<<<", end = "")
+    dimes = int(input())
+    print(">>>Enter Quarters\n\t<<<", end = "")
+    quarters = int(input())
+    
+    return(pennies * 0.01) + (nickels * 0.05) + (dimes * 0.1) + (quarters * 0.25)
+    
+    
+    
+    
+
+def coffeeOrder():
+    
+    while(machineStatus):
+        coffeeSel = coffeeSelect()
+        coffeeSel = coffeeSel.lower()
+        
+        if(coffeeSel == "off"):
+            print("Machine turning off...")
+            break
+        
+        else:
+            
+            resourcesLeft(coffeeSel)
+    
+        
+
+
+#TODO: add Quarters, Dimes, Nickles, Pennies - Done
+#TODO: Add off
+#TODO: Add report as coffee select option - Done
+#TODO: Fix Initial Resources, Recipe, and, Money Earned.
+#Quarter: 0.25, Dimes: 0.1, Nickel: 0.05, Penny: 0.01
+
+coffeeOrder()
