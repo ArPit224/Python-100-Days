@@ -20,7 +20,7 @@ class User():
     def start(self):
         qe = QE()
         self.score = qe.userScore
-        print(f"Score: {self.score}\nPercentage: {(self.score/12)*100}") 
+        print(f"--------------\n**********\n\tResult\nScore: {self.score}\nPercentage: {(self.score/12)*100}\n\n**********\n-----------") 
         
 
         

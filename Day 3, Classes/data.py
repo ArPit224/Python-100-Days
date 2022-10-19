@@ -1,4 +1,6 @@
-question_data = [
+import queFetch as qf
+
+'''question_data = [
 {"text": "A slug's blood is green.", "answer": "True"},
 {"text": "The loudest animal is the African Elephant.", "answer": "False"},
 {"text": "Approximately one quarter of human bones are in the feet.", "answer": "True"},
@@ -11,4 +13,14 @@ question_data = [
 {"text": "Buzz Aldrin's mother's maiden name was 'Moon'.", "answer": "True"},
 {"text": "No piece of square dry paper can be folded in half more than 7 times.", "answer": "False"},
 {"text": "A few ounces of chocolate can to kill a small dog.", "answer": "True"}
-]
+]'''
+
+question_data = []
+data = qf.newQues()
+
+ques = data["ques"]
+ans = data["ans"]
+
+for i, j in enumerate(ques):
+    question_data.append({"text": ques[i], "answer": ans[i]})
+    
