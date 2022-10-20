@@ -6,6 +6,7 @@ Goals:
 
 from QuestionsEngine import quesEngine as QE
 
+
 class User():
     
     id = "000"
@@ -20,12 +21,11 @@ class User():
     def start(self):
         qe = QE()
         self.score = qe.userScore
-        print(f"--------------\n**********\n\tResult\nScore: {self.score}\nPercentage: {(self.score/12)*100}\n\n**********\n-----------") 
+        print(f"--------------\n**********\n\t{self.name}'s Result\nScore: {self.score}\nPercentage: {(self.score/12)*100}\n\n**********\n-----------") 
         
 
-        
-    
-                
+
+
 
 user_1 = User("Garry", "012")
 
