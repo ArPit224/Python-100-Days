@@ -32,22 +32,22 @@ raceOn = False
 
 if user_bet:
     raceOn = True
-
-def move():
-    
-    for i in range(0, 6):
-        
-        if racers[i].tur.xcor() >= 450:
-            raceOn = False
-            return(racers[i].color)
-            
-        else:
-            racers[i].tur.forward(randint(0, 10))
-            return "white"
     
     
 while(raceOn):
-    winner = move()
+    
+
+     for i in range(0, 6):
+        racers[i].tur.forward(randint(0, 10))
+        
+     for i in range(0, 6):
+        
+        if racers[i].tur.xcor() >= 430:
+            winner = racers[i].color
+            raceOn = False
+            break
+    
+
     
 if(user_bet == winner):
     print(f"Nice Pick, your bet {winner} WON!!!")
