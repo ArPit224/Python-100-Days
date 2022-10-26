@@ -19,9 +19,11 @@ class Turtlesnake:
             self.snake[i].penup()
             self.snake[i].setpos(-20*i, 0)
             
-            self.head = self.snake[0]
-            
             screen.update()
+            
+        self.head = self.snake[0]
+        self.head.color("green")
+
     def addSeg(self):
         
             i = self.length - 1
