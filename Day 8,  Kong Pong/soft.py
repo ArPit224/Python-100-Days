@@ -4,9 +4,9 @@ from time import sleep
 from KongPongEngine import Paddle, Ball
 
 screen = Screen()
-screen.setup(width = 800, height = 600)
+screen.setup(width = 900, height = 700)
 screen.tracer(0)
-screen.bgcolor("black")
+screen.bgcolor("white")
 screen.colormode(255)
 
 
@@ -22,17 +22,19 @@ gameOn = True
 while(gameOn):
     
     ball.forward(10)
-    screen.update()
     
     if(ball.xcor() >= 380 or ball.xcor() <= -380):
         ball.xBounce()
         ball.moveDist = 5
+        screen.update()
+        
         #ball.screenColl()
         
     elif(ball.ycor() >= 280 or ball.ycor() <= -280):
         ball.yBounce()
         ball.moveDist = 5
+        screen.update()
+
 
         #ball.screenColl()
-        
     sleep(0.001)
