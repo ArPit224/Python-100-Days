@@ -1,0 +1,6 @@
+Goals:
+1. Basic reflection model
+2. A controllable circular Turtle surface
+3. Variable reflectivity
+4. Light Intensity relative to the reflectivity
+5. That's it for today
