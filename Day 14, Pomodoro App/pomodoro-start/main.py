@@ -10,7 +10,26 @@ WORK_MIN = 1500
 SHORT_BREAK_MIN = 300
 LONG_BREAK_MIN = 1200
 reps = 0
+ticks = ""
+timer = NONE
 # ---------------------------- TIMER RESET ------------------------------- # 
+def resetTimer():
+    
+    global reps
+    
+    window.after_cancel(timer)
+    reps = 0
+    
+    canvas.itemconfig(labelTimer, text = "00:00")
+# ---------------------------- TICK MECHANISM ------------------------------- # 
+
+def tick():
+    global ticks
+    global reps
+    
+    ticks = "✔" * (reps - 1)
+    
+    labelTick.config(text = ticks)
 
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 
@@ -22,32 +41,30 @@ def startTimer():
     
     reps += 1
 
-    currentState = reps % 2
     
-    if(reps == 7):
+    if(reps == 8):
         reps = 0
+        canvas.config(bg = GREEN)
         countDown(1200)
+        tick()
     
+    
+    elif(reps % 2 == 1):
+        countDown(1500)
+        canvas.config(bg = PINK)
+        labelHead.config(text = "WORK")
+        tick()
+        
+        
     else:
-        if(currentState == 1):
-            countDown(1500)
-            print(reps)
-            startTimer()
-            
-        else:
-            
-            countDown(300)
-            print(reps)
-            startTimer()
-            
-            
+        countDown(300)
+        canvas.config(bg = RED)
+        tick()
+        
             
         
             
-def resetTimer():
 
-    
-    canvas.itemconfig(labelTimer, text = "00:00")
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
 
@@ -65,12 +82,14 @@ def countDown(count):
 
     
     if(count > 0):
+        global timer
         
         count -= 1
         
-        window.after(1000, countDown, count)
+        timer = window.after(1000, countDown, count)
         
-
+    else:
+        startTimer()
 
 # ---------------------------- UI SETUP ------------------------------- #
 
@@ -92,15 +111,15 @@ labelTimer = canvas.create_text((125, 150), text = "00:00", font = (FONT_NAME, 3
 
 canvas.config(bg = YELLOW)
 
-label = Label(text = "TIMER", foreground = GREEN, background = YELLOW, font = (FONT_NAME, 35, "bold"))
+labelHead = Label(text = "TIMER", foreground = GREEN, background = YELLOW, font = (FONT_NAME, 35, "bold"))
 
 buttonStart = Button(text = "Start", bg = YELLOW, font = (FONT_NAME, 20, "bold"), command = startTimer)
 buttonReset = Button(text = "Reset", bg = YELLOW, font = (FONT_NAME, 20, "bold"), command = resetTimer)
 
-labelTick = Label(text = "✔", bg = YELLOW, fg = GREEN, font = (FONT_NAME, 20, "bold"))
+labelTick = Label(text = ticks, bg = YELLOW, fg = GREEN, font = (FONT_NAME, 20, "bold"))
 
 
-label.grid(row = 0, column = 1)
+labelHead.grid(row = 0, column = 1)
 canvas.grid(row = 1, column = 1)
 buttonStart.grid(row = 3, column = 0)
 buttonReset.grid(row = 3, column = 2)
