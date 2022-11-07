@@ -21,6 +21,8 @@ def resetTimer():
     reps = 0
     
     canvas.itemconfig(labelTimer, text = "00:00")
+    canvas.config(bg = YELLOW)
+    
 # ---------------------------- TICK MECHANISM ------------------------------- # 
 
 def tick():
