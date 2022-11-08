@@ -5,8 +5,16 @@ dictPhoneticNato = {"a": "alpha", "b": "bravo", "c": "charlee", "d": "delta", "e
                     "t": "tango", "u": "uniform", "v": "victor", "w": "whiskey", "x": "x-ray",
                     "y": "yankee", "z": "zulu"}
 
-input = input().lower()
+input = input("Enter the word\n").lower()
 
-output = [{char: dictPhoneticNato[char]} for char in input]
+output = []
+
+for i in input:
+    try:
+        
+        output.append({i: dictPhoneticNato[i]})
+        
+    except KeyError:
+        pass
 
 print(output)
