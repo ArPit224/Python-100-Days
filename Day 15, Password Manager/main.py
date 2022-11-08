@@ -67,6 +67,7 @@ def savePass():
 window = Tk()
 window.title("Password Manager")
 window.config(width = 400, height = 400, padx = 20, pady = 20)
+window.wm_resizable(width = False, height = False)
 
 photoImageLogo = PhotoImage(file = "Day 15, Password Manager/logo.png")
 
