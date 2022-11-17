@@ -1,0 +1,9 @@
+Vocab Builder
+1: Frequency Dictionary
+2: Using Tk?
+3: Learning French?
+4: Flash Card Program
+5: Like Anki
+6: My Capstone Project
+
+Steps: 

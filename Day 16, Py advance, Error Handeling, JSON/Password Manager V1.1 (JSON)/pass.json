@@ -6,5 +6,9 @@
     "test2": {
         "email": "testemail@gmail.com",
         "pass": "test2"
+    },
+    "testWebsite.com": {
+        "email": "testemail@gmail.com",
+        "pass": "TesTesTes"
     }
 }
