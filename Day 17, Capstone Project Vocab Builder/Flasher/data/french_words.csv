@@ -1,102 +1,102 @@
-French,English
-partie,part
-histoire,history
-chercher,search
-seulement,only
-police,police
-pensais,thought
-aide,help
-demande,request
-genre,kind
-mois,month
-frère,brother
-laisser,let
-car,because
-mettre,to put
-aucun,no
-laisse,leash
-eux,them
-ville,city
-chaque,each
-parlé,speak
-arrivé,come
-devrait,should
-bébé,baby
-longtemps,long time
-heures,hours
-vont,will
-pendant,while
-revoir,meet again
-aucune,any
-place,square
-parle,speak
-compris,understood
-savais,knew
-étaient,were
-attention,Warning
-voici,here is
-pourrais,could
-affaire,case
-donner,give
-type,type
-leurs,their
-donné,given
-train,train
-corps,body
-endroit,place
-yeux,eyes
-façon,way
-écoute,listen
-dont,whose
-trouve,find
-premier,first
-perdu,lost
-main,hand
-première,first
-côté,side
-pouvoir,power
-vieux,old
-sois,be
-tiens,here
-matin,morning
-tellement,so much
-enfant,child
-point,point
-venu,came
-suite,after
-pardon,sorry
-venez,come
-devant,in front of
-vers,towards
-minutes,minutes
-demandé,request
-chambre,bedroom
-mis,placed
-belle,beautiful
-droit,law
-aimerais,would like to
-aujourd'hui,today
-mari,husband
-cause,cause
-enfin,finally
-espère,hope
-eau,water
-attendez,Wait
-parti,left
-nouvelle,new
-boulot,job
-arrêter,Stop
-dirait,would say
-terre,Earth
-compte,account
-donne,given
-loin,far
-fin,end
-croire,believe
-chérie,sweetheart
-gros,large
-plutôt,rather
-aura,will have
-filles,girls
-jouer,to play
-bureau,office
+ind,eng,fr
+0,part,partie
+1,history,histoire
+2,search,chercher
+3,only,seulement
+4,police,police
+5,thought,pensais
+6,help,aide
+7,request,demande
+8,kind,genre
+9,month,mois
+10,brother,frère
+11,let,laisser
+12,because,car
+13,to put,mettre
+14,no,aucun
+15,leash,laisse
+16,them,eux
+17,city,ville
+18,each,chaque
+19,speak,parlé
+20,come,arrivé
+21,should,devrait
+22,baby,bébé
+23,long time,longtemps
+24,hours,heures
+25,will,vont
+26,while,pendant
+27,meet again,revoir
+28,any,aucune
+29,square,place
+30,speak,parle
+31,understood,compris
+32,knew,savais
+33,were,étaient
+34,Warning,attention
+35,here is,voici
+36,could,pourrais
+37,case,affaire
+38,give,donner
+39,type,type
+40,their,leurs
+41,given,donné
+42,train,train
+43,body,corps
+44,place,endroit
+45,eyes,yeux
+46,way,façon
+47,listen,écoute
+48,whose,dont
+49,find,trouve
+50,first,premier
+51,lost,perdu
+52,hand,main
+53,first,première
+54,side,côté
+55,power,pouvoir
+56,old,vieux
+57,be,sois
+58,here,tiens
+59,morning,matin
+60,so much,tellement
+61,child,enfant
+62,point,point
+63,came,venu
+64,after,suite
+65,sorry,pardon
+66,come,venez
+67,in front of,devant
+68,towards,vers
+69,minutes,minutes
+70,request,demandé
+71,bedroom,chambre
+72,placed,mis
+73,beautiful,belle
+74,law,droit
+75,would like to,aimerais
+76,today,aujourd'hui
+77,husband,mari
+78,cause,cause
+79,finally,enfin
+80,hope,espère
+81,water,eau
+82,Wait,attendez
+83,left,parti
+84,new,nouvelle
+85,job,boulot
+86,Stop,arrêter
+87,would say,dirait
+88,Earth,terre
+89,account,compte
+90,given,donne
+91,far,loin
+92,end,fin
+93,believe,croire
+94,sweetheart,chérie
+95,large,gros
+96,rather,plutôt
+97,will have,aura
+98,girls,filles
+99,to play,jouer
+100,office,bureau

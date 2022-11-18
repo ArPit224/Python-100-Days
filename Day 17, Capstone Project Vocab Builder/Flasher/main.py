@@ -41,9 +41,11 @@ imageButtonW = PhotoImage(file = "Day 17, Capstone Project Vocab Builder/Flasher
 #+++++++++++++++++++++++++++++++++++++ Data +++++++++++++++++++++++++++++++++++++#
 
 
-df = pd.read_csv("Day 17, Capstone Project Vocab Builder/Flasher/data/french_words.csv")
-#df = pd.read_csv("data/french_words.csv")
+try:
+    df = pd.read_csv("Day 17, Capstone Project Vocab Builder/Flasher/data/toLearn.csv")
 
+except:
+    df = pd.read_csv("Day 17, Capstone Project Vocab Builder/Flasher/data/french_words.csv")
 
 def randomWordGen():
     
@@ -51,7 +53,7 @@ def randomWordGen():
     
     indexRand = randint(0, len(df) - 1)
     
-    wordRand =  {"ind": indexRand, "fr": df.iloc[indexRand, 0], "eng": df.iloc[indexRand, 1]}
+    wordRand =  {"ind": indexRand, "fr": df.iloc[indexRand, 2], "eng": df.iloc[indexRand, 1]}
     
     canvasT.itemconfig(canvaImage, image = imageBg)
     
@@ -70,8 +72,7 @@ def checker(ans, boolAns):
     
     if(boolAns):
         df = df.drop(ans["ind"]).reset_index(drop = True)
-        dfLearned = pd.DataFrame(learned)
-        dfLearned.to_csv("leanred.csv")
+        df.to_csv("Day 17, Capstone Project Vocab Builder/Flasher/data/toLearn.csv", index = False)
         
 
 
