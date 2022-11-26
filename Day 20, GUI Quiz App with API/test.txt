@@ -1,0 +1,14 @@
+It starts when the clock Starts
+3 Hours
+180 Minutes of madness
+More actually
+I code during the break
+I hope everything works perfectly and there is absolutely no issue with anything at all
+B O O M
+STARTED
+HALLO HOMETOWN
+By Bosse, very good song
+
+API: https://opentdb.com/
+
+https://opentdb.com/api.php?amount=10
