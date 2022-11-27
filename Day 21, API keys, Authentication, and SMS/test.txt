@@ -1,0 +1,4 @@
+I have to make some Tensorflow projects
+API authentication is nice
+I am so overwchelmed rn
+API: Openweather.org
