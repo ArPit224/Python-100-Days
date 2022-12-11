@@ -36,7 +36,7 @@ with smtplib.SMTP("smtp.gmail.com") as connection:
     connection.starttls()
     connection.login(user = email, password = passwordEmail)
     connection.sendmail(from_addr = email,
-                        to_addrs = "ar10936325@gmail.com",
+                        to_addrs = "toemail@gmail.com",
                         msg = f"Subject: Daily Quotes for today\n\n{message}")
 
 #++++++++++++++++++++ Email Sender +++++++++++++++++++++#
