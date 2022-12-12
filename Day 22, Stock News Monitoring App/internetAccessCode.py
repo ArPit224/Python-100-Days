@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 import os
 from datetime import datetime
 import smtplib
+import html
 
 load_dotenv()
 
@@ -70,12 +71,12 @@ class newsHolder:
     
     def __init__(self, name, author, title, description, url, content):
         
-        self.name = name
-        self.author = author
-        self.title = title
-        self.description = description
-        self.url = url
-        self.content = content
+        self.name = html.unescape(name)
+        self.author = html.unescape(author)
+        self.title = html.unescape(title)
+        self.description = html.unescape(description)
+        self.url = html.unescape(url)
+        self.content = html.unescape(content)
     
     def printer(self):
         
@@ -83,13 +84,7 @@ class newsHolder:
         Prints out neatly formatted news article
         '''
         
-        return f"""
-{self.title}
-{self.name}
-by: {self.author}
-Desc: {self.description}
-url: {self.url}
-Content: {self.content}"""
+        return f"{self.title}\n{self.name}\nby: {self.author}\nDesc: {self.description}\nurl: {self.url}\nContent: {self.content}"
 
 
 class emailer:
